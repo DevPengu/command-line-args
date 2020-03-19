@@ -1299,6 +1299,7 @@ class GroupedOutput extends Output {
  * @alias module:command-line-args
  */
 function commandLineArgs (optionDefinitions, options) {
+  if (!optionDefinitions && typeof options === 'object') return options.argv;
   options = options || {};
 
   /* stopAtFirstUnknown implies partial */
